@@ -12,6 +12,7 @@
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HistorialVentasForm));
             panelFiltros = new Panel();
             btnBuscar = new Button();
             dtpHasta = new DateTimePicker();
@@ -174,7 +175,9 @@
             ClientSize = new Size(900, 600);
             Controls.Add(splitContainer1);
             Controls.Add(panelFiltros);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "HistorialVentasForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Historial de Ventas";
             Load += HistorialVentasForm_Load;
             panelFiltros.ResumeLayout(false);

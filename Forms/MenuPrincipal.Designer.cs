@@ -22,6 +22,7 @@
             tsmiGestion = new ToolStripMenuItem();
             tsmiProductos = new ToolStripMenuItem();
             tsmiClientes = new ToolStripMenuItem();
+            fiadoToolStripMenuItem = new ToolStripMenuItem();
             tsmiProveedores = new ToolStripMenuItem();
             tsmiVentas = new ToolStripMenuItem();
             tsmiNuevaVenta = new ToolStripMenuItem();
@@ -30,7 +31,6 @@
             tsmiUsuarios = new ToolStripMenuItem();
             statusStrip1 = new StatusStrip();
             lblUsuarioInfo = new ToolStripStatusLabel();
-            fiadoToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             statusStrip1.SuspendLayout();
             SuspendLayout();
@@ -68,7 +68,7 @@
             // tsmiProductos
             // 
             tsmiProductos.Name = "tsmiProductos";
-            tsmiProductos.Size = new Size(180, 22);
+            tsmiProductos.Size = new Size(139, 22);
             tsmiProductos.Text = "Productos";
             tsmiProductos.Click += tsmiProductos_Click;
             // 
@@ -76,14 +76,21 @@
             // 
             tsmiClientes.DropDownItems.AddRange(new ToolStripItem[] { fiadoToolStripMenuItem });
             tsmiClientes.Name = "tsmiClientes";
-            tsmiClientes.Size = new Size(180, 22);
+            tsmiClientes.Size = new Size(139, 22);
             tsmiClientes.Text = "Clientes";
             tsmiClientes.Click += tsmiClientes_Click;
+            // 
+            // fiadoToolStripMenuItem
+            // 
+            fiadoToolStripMenuItem.Name = "fiadoToolStripMenuItem";
+            fiadoToolStripMenuItem.Size = new Size(103, 22);
+            fiadoToolStripMenuItem.Text = "Fiado";
+            fiadoToolStripMenuItem.Click += fiadoToolStripMenuItem_Click;
             // 
             // tsmiProveedores
             // 
             tsmiProveedores.Name = "tsmiProveedores";
-            tsmiProveedores.Size = new Size(180, 22);
+            tsmiProveedores.Size = new Size(139, 22);
             tsmiProveedores.Text = "Proveedores";
             // 
             // tsmiVentas
@@ -134,13 +141,6 @@
             lblUsuarioInfo.Size = new Size(122, 17);
             lblUsuarioInfo.Text = "Usuario: Desconocido";
             // 
-            // fiadoToolStripMenuItem
-            // 
-            fiadoToolStripMenuItem.Name = "fiadoToolStripMenuItem";
-            fiadoToolStripMenuItem.Size = new Size(180, 22);
-            fiadoToolStripMenuItem.Text = "Fiado";
-            fiadoToolStripMenuItem.Click += fiadoToolStripMenuItem_Click;
-            // 
             // MenuPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -150,6 +150,7 @@
             ClientSize = new Size(800, 450);
             Controls.Add(statusStrip1);
             Controls.Add(menuStrip1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             IsMdiContainer = true;
             MainMenuStrip = menuStrip1;
             Name = "MenuPrincipal";

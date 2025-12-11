@@ -15,97 +15,100 @@
 
         private void InitializeComponent()
         {
-            this.lblTitulo = new System.Windows.Forms.Label();
-            this.lblUsuario = new System.Windows.Forms.Label();
-            this.txtUsuario = new System.Windows.Forms.TextBox();
-            this.lblPass = new System.Windows.Forms.Label();
-            this.txtPass = new System.Windows.Forms.TextBox();
-            this.btnLogin = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel1.SuspendLayout();
-            this.SuspendLayout();
-
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
+            lblTitulo = new Label();
+            lblUsuario = new Label();
+            txtUsuario = new TextBox();
+            lblPass = new Label();
+            txtPass = new TextBox();
+            btnLogin = new Button();
+            panel1 = new Panel();
+            SuspendLayout();
             // 
             // lblTitulo
             // 
-            this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblTitulo.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.lblTitulo.Location = new System.Drawing.Point(80, 20);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(160, 32);
-            this.lblTitulo.TabIndex = 0;
-            this.lblTitulo.Text = "Bienvenido";
-            this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-
+            lblTitulo.AutoSize = true;
+            lblTitulo.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            lblTitulo.ForeColor = Color.DarkSlateBlue;
+            lblTitulo.Location = new Point(80, 20);
+            lblTitulo.Name = "lblTitulo";
+            lblTitulo.Size = new Size(142, 32);
+            lblTitulo.TabIndex = 0;
+            lblTitulo.Text = "Bienvenido";
+            lblTitulo.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblUsuario
             // 
-            this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(30, 80);
-            this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Text = "Usuario:";
-
+            lblUsuario.AutoSize = true;
+            lblUsuario.Location = new Point(30, 80);
+            lblUsuario.Name = "lblUsuario";
+            lblUsuario.Size = new Size(50, 15);
+            lblUsuario.TabIndex = 1;
+            lblUsuario.Text = "Usuario:";
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(30, 100);
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(260, 23);
-            this.txtUsuario.TabIndex = 1;
-
+            txtUsuario.Location = new Point(30, 100);
+            txtUsuario.Name = "txtUsuario";
+            txtUsuario.Size = new Size(260, 23);
+            txtUsuario.TabIndex = 1;
             // 
             // lblPass
             // 
-            this.lblPass.AutoSize = true;
-            this.lblPass.Location = new System.Drawing.Point(30, 140);
-            this.lblPass.Name = "lblPass";
-            this.lblPass.Text = "Contraseña:";
-
+            lblPass.AutoSize = true;
+            lblPass.Location = new Point(30, 140);
+            lblPass.Name = "lblPass";
+            lblPass.Size = new Size(70, 15);
+            lblPass.TabIndex = 2;
+            lblPass.Text = "Contraseña:";
             // 
             // txtPass
             // 
-            this.txtPass.Location = new System.Drawing.Point(30, 160);
-            this.txtPass.Name = "txtPass";
-            this.txtPass.PasswordChar = '*'; // Para ocultar la contraseña
-            this.txtPass.Size = new System.Drawing.Size(260, 23);
-            this.txtPass.TabIndex = 2;
-
+            txtPass.Location = new Point(30, 160);
+            txtPass.Name = "txtPass";
+            txtPass.PasswordChar = '*';
+            txtPass.Size = new Size(260, 23);
+            txtPass.TabIndex = 2;
             // 
             // btnLogin
             // 
-            this.btnLogin.BackColor = System.Drawing.Color.DarkSlateBlue;
-            this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.Location = new System.Drawing.Point(30, 210);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(260, 40);
-            this.btnLogin.TabIndex = 3;
-            this.btnLogin.Text = "INGRESAR";
-            this.btnLogin.UseVisualStyleBackColor = false;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click); // Evento Click
-
+            btnLogin.BackColor = Color.DarkSlateBlue;
+            btnLogin.FlatStyle = FlatStyle.Flat;
+            btnLogin.ForeColor = Color.White;
+            btnLogin.Location = new Point(30, 210);
+            btnLogin.Name = "btnLogin";
+            btnLogin.Size = new Size(260, 40);
+            btnLogin.TabIndex = 3;
+            btnLogin.Text = "INGRESAR";
+            btnLogin.UseVisualStyleBackColor = false;
+            btnLogin.Click += btnLogin_Click;
+            // 
+            // panel1
+            // 
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(200, 100);
+            panel1.TabIndex = 0;
             // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(340, 300);
-            this.Controls.Add(this.lblTitulo);
-            this.Controls.Add(this.lblUsuario);
-            this.Controls.Add(this.txtUsuario);
-            this.Controls.Add(this.lblPass);
-            this.Controls.Add(this.txtPass);
-            this.Controls.Add(this.btnLogin);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
-            this.Name = "LoginForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Acceso al Sistema";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(340, 300);
+            Controls.Add(lblTitulo);
+            Controls.Add(lblUsuario);
+            Controls.Add(txtUsuario);
+            Controls.Add(lblPass);
+            Controls.Add(txtPass);
+            Controls.Add(btnLogin);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
+            Name = "LoginForm";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Acceso al Sistema";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         private System.Windows.Forms.Label lblTitulo;

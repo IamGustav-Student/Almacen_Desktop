@@ -12,193 +12,293 @@
 
         private void InitializeComponent()
         {
-            this.lblTitulo = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cboMetodoPago = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cboClientes = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.txtEscanear = new System.Windows.Forms.TextBox();
-            this.labelEscanear = new System.Windows.Forms.Label();
-            this.btnAgregar = new System.Windows.Forms.Button();
-            this.numCantidad = new System.Windows.Forms.NumericUpDown();
-            this.label3 = new System.Windows.Forms.Label();
-            this.cboProductos = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dgvCarrito = new System.Windows.Forms.DataGridView();
-            this.lblTotal = new System.Windows.Forms.Label();
-            this.btnFinalizar = new System.Windows.Forms.Button();
-
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numCantidad)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCarrito)).BeginInit();
-            this.SuspendLayout();
-
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VentasForm));
+            lblTitulo = new Label();
+            groupBox1 = new GroupBox();
+            btnVentas = new Button();
+            btnFiados = new Button();
+            cboMetodoPago = new ComboBox();
+            label4 = new Label();
+            cboClientes = new ComboBox();
+            label1 = new Label();
+            groupBox2 = new GroupBox();
+            txtEscanear = new TextBox();
+            labelEscanear = new Label();
+            btnAgregar = new Button();
+            numCantidad = new NumericUpDown();
+            label3 = new Label();
+            cboProductos = new ComboBox();
+            label2 = new Label();
+            dgvCarrito = new DataGridView();
+            btnFinalizar = new Button();
+            lblTotal = new Label();
+            groupBox3 = new GroupBox();
+            groupBox1.SuspendLayout();
+            groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numCantidad).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvCarrito).BeginInit();
+            groupBox3.SuspendLayout();
+            SuspendLayout();
+            // 
             // lblTitulo
-            this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
-            this.lblTitulo.Location = new System.Drawing.Point(12, 9);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Text = "Nueva Venta";
-
             // 
-            // groupBox1 (Datos de la Venta)
+            lblTitulo.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            lblTitulo.AutoSize = true;
+            lblTitulo.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
+            lblTitulo.Location = new Point(12, 9);
+            lblTitulo.Name = "lblTitulo";
+            lblTitulo.Size = new Size(145, 30);
+            lblTitulo.TabIndex = 7;
+            lblTitulo.Text = "Nueva Venta";
             // 
-            this.groupBox1.Controls.Add(this.cboMetodoPago);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.cboClientes);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(18, 50);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(760, 70);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Datos de Pago";
-
-            // label4 (Método Pago)
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(20, 30);
-            this.label4.Text = "Método Pago:";
-
-            // cboMetodoPago (NUEVO)
-            this.cboMetodoPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboMetodoPago.FormattingEnabled = true;
-            this.cboMetodoPago.Location = new System.Drawing.Point(110, 27);
-            this.cboMetodoPago.Name = "cboMetodoPago";
-            this.cboMetodoPago.Size = new System.Drawing.Size(150, 23);
-            this.cboMetodoPago.TabIndex = 0;
-            this.cboMetodoPago.SelectedIndexChanged += new System.EventHandler(this.cboMetodoPago_SelectedIndexChanged);
-
-            // label1 (Cliente)
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(280, 30);
-            this.label1.Text = "Cliente:";
-
+            // groupBox1
+            // 
+            groupBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            groupBox1.Controls.Add(btnVentas);
+            groupBox1.Controls.Add(btnFiados);
+            groupBox1.Controls.Add(cboMetodoPago);
+            groupBox1.Controls.Add(label4);
+            groupBox1.Controls.Add(cboClientes);
+            groupBox1.Controls.Add(label1);
+            groupBox1.Location = new Point(18, 50);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(1254, 225);
+            groupBox1.TabIndex = 1;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Datos de Pago";
+            // 
+            // btnVentas
+            // 
+            btnVentas.AutoSize = true;
+            btnVentas.BackColor = Color.Green;
+            btnVentas.FlatStyle = FlatStyle.Flat;
+            btnVentas.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnVentas.ForeColor = Color.White;
+            btnVentas.Location = new Point(1094, 44);
+            btnVentas.Name = "btnVentas";
+            btnVentas.Size = new Size(120, 30);
+            btnVentas.TabIndex = 8;
+            btnVentas.Text = "Ventas";
+            btnVentas.UseVisualStyleBackColor = false;
+            btnVentas.Click += btnVentas_Click;
+            // 
+            // btnFiados
+            // 
+            btnFiados.AutoSize = true;
+            btnFiados.BackColor = Color.Green;
+            btnFiados.FlatStyle = FlatStyle.Flat;
+            btnFiados.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnFiados.ForeColor = Color.White;
+            btnFiados.Location = new Point(941, 44);
+            btnFiados.Name = "btnFiados";
+            btnFiados.Size = new Size(120, 30);
+            btnFiados.TabIndex = 7;
+            btnFiados.Text = "Fiado";
+            btnFiados.UseVisualStyleBackColor = false;
+            btnFiados.Click += btnFiados_Click;
+            // 
+            // cboMetodoPago
+            // 
+            cboMetodoPago.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboMetodoPago.FormattingEnabled = true;
+            cboMetodoPago.Location = new Point(110, 27);
+            cboMetodoPago.Name = "cboMetodoPago";
+            cboMetodoPago.Size = new Size(150, 23);
+            cboMetodoPago.TabIndex = 0;
+            cboMetodoPago.SelectedIndexChanged += cboMetodoPago_SelectedIndexChanged;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            label4.Location = new Point(20, 30);
+            label4.Name = "label4";
+            label4.Size = new Size(84, 15);
+            label4.TabIndex = 1;
+            label4.Text = "Método Pago:";
+            // 
             // cboClientes
-            this.cboClientes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboClientes.FormattingEnabled = true;
-            this.cboClientes.Location = new System.Drawing.Point(330, 27);
-            this.cboClientes.Name = "cboClientes";
-            this.cboClientes.Size = new System.Drawing.Size(400, 23);
-            this.cboClientes.TabIndex = 1;
-
             // 
-            // groupBox2 (Agregar Producto)
+            cboClientes.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboClientes.FormattingEnabled = true;
+            cboClientes.Location = new Point(330, 27);
+            cboClientes.Name = "cboClientes";
+            cboClientes.Size = new Size(400, 23);
+            cboClientes.TabIndex = 1;
             // 
-            this.groupBox2.Controls.Add(this.txtEscanear);
-            this.groupBox2.Controls.Add(this.labelEscanear);
-            this.groupBox2.Controls.Add(this.btnAgregar);
-            this.groupBox2.Controls.Add(this.numCantidad);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.cboProductos);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Location = new System.Drawing.Point(18, 130);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(760, 100);
-            this.groupBox2.TabIndex = 2;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Agregar Producto";
-
-            // labelEscanear
-            this.labelEscanear.AutoSize = true;
-            this.labelEscanear.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.labelEscanear.ForeColor = System.Drawing.Color.DarkBlue;
-            this.labelEscanear.Location = new System.Drawing.Point(15, 25);
-            this.labelEscanear.Text = "ESCANEAR CÓDIGO:";
-
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(280, 30);
+            label1.Name = "label1";
+            label1.Size = new Size(47, 15);
+            label1.TabIndex = 2;
+            label1.Text = "Cliente:";
+            // 
+            // groupBox2
+            // 
+            groupBox2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            groupBox2.Controls.Add(txtEscanear);
+            groupBox2.Controls.Add(labelEscanear);
+            groupBox2.Controls.Add(btnAgregar);
+            groupBox2.Controls.Add(numCantidad);
+            groupBox2.Controls.Add(label3);
+            groupBox2.Controls.Add(cboProductos);
+            groupBox2.Controls.Add(label2);
+            groupBox2.Location = new Point(18, 130);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(1254, 255);
+            groupBox2.TabIndex = 2;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Agregar Producto";
+            // 
             // txtEscanear
-            this.txtEscanear.BackColor = System.Drawing.Color.LightCyan;
-            this.txtEscanear.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.txtEscanear.Location = new System.Drawing.Point(140, 22);
-            this.txtEscanear.Name = "txtEscanear";
-            this.txtEscanear.Size = new System.Drawing.Size(200, 27);
-            this.txtEscanear.TabIndex = 0;
-            this.txtEscanear.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEscanear_KeyPress);
-
-            // cboProductos
-            this.cboProductos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboProductos.FormattingEnabled = true;
-            this.cboProductos.Location = new System.Drawing.Point(80, 60);
-            this.cboProductos.Name = "cboProductos";
-            this.cboProductos.Size = new System.Drawing.Size(300, 23);
-            this.cboProductos.TabIndex = 2;
-
-            // label2
-            this.label2.AutoSize = true; this.label2.Location = new System.Drawing.Point(15, 63); this.label2.Text = "O Manual:";
-
-            // numCantidad
-            this.numCantidad.Location = new System.Drawing.Point(460, 60);
-            this.numCantidad.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
-            this.numCantidad.Name = "numCantidad";
-            this.numCantidad.Value = new decimal(new int[] { 1, 0, 0, 0 });
-            this.numCantidad.Size = new System.Drawing.Size(60, 23);
-            this.numCantidad.TabIndex = 3;
-
-            // label3
-            this.label3.AutoSize = true; this.label3.Location = new System.Drawing.Point(395, 63); this.label3.Text = "Cantidad:";
-
+            // 
+            txtEscanear.BackColor = Color.LightCyan;
+            txtEscanear.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            txtEscanear.Location = new Point(140, 22);
+            txtEscanear.Name = "txtEscanear";
+            txtEscanear.Size = new Size(200, 27);
+            txtEscanear.TabIndex = 0;
+            txtEscanear.TextChanged += txtEscanear_TextChanged;
+            txtEscanear.KeyPress += txtEscanear_KeyPress;
+            // 
+            // labelEscanear
+            // 
+            labelEscanear.AutoSize = true;
+            labelEscanear.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            labelEscanear.ForeColor = Color.DarkBlue;
+            labelEscanear.Location = new Point(15, 25);
+            labelEscanear.Name = "labelEscanear";
+            labelEscanear.Size = new Size(119, 15);
+            labelEscanear.TabIndex = 1;
+            labelEscanear.Text = "ESCANEAR CÓDIGO:";
+            // 
             // btnAgregar
-            this.btnAgregar.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnAgregar.ForeColor = System.Drawing.Color.White;
-            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregar.Location = new System.Drawing.Point(550, 55);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(120, 30);
-            this.btnAgregar.TabIndex = 4;
-            this.btnAgregar.Text = "Agregar Manual";
-            this.btnAgregar.UseVisualStyleBackColor = false;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-
+            // 
+            btnAgregar.BackColor = Color.SteelBlue;
+            btnAgregar.FlatStyle = FlatStyle.Flat;
+            btnAgregar.ForeColor = Color.White;
+            btnAgregar.Location = new Point(550, 55);
+            btnAgregar.Name = "btnAgregar";
+            btnAgregar.Size = new Size(120, 30);
+            btnAgregar.TabIndex = 4;
+            btnAgregar.Text = "Agregar Manual";
+            btnAgregar.UseVisualStyleBackColor = false;
+            btnAgregar.Click += btnAgregar_Click;
+            // 
+            // numCantidad
+            // 
+            numCantidad.Location = new Point(460, 60);
+            numCantidad.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            numCantidad.Name = "numCantidad";
+            numCantidad.Size = new Size(60, 23);
+            numCantidad.TabIndex = 3;
+            numCantidad.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(395, 63);
+            label3.Name = "label3";
+            label3.Size = new Size(58, 15);
+            label3.TabIndex = 5;
+            label3.Text = "Cantidad:";
+            // 
+            // cboProductos
+            // 
+            cboProductos.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboProductos.FormattingEnabled = true;
+            cboProductos.Location = new Point(80, 60);
+            cboProductos.Name = "cboProductos";
+            cboProductos.Size = new Size(300, 23);
+            cboProductos.TabIndex = 2;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(15, 63);
+            label2.Name = "label2";
+            label2.Size = new Size(62, 15);
+            label2.TabIndex = 6;
+            label2.Text = "O Manual:";
+            // 
             // dgvCarrito
-            this.dgvCarrito.AllowUserToAddRows = false;
-            this.dgvCarrito.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvCarrito.BackgroundColor = System.Drawing.Color.White;
-            this.dgvCarrito.Location = new System.Drawing.Point(18, 250);
-            this.dgvCarrito.Name = "dgvCarrito";
-            this.dgvCarrito.ReadOnly = true;
-            this.dgvCarrito.Size = new System.Drawing.Size(760, 200);
-            this.dgvCarrito.TabIndex = 3;
-
-            // lblTotal
-            this.lblTotal.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.lblTotal.Location = new System.Drawing.Point(500, 460);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Text = "Total a Pagar: $0.00";
-            this.lblTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-
+            // 
+            dgvCarrito.AllowUserToAddRows = false;
+            dgvCarrito.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dgvCarrito.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvCarrito.BackgroundColor = Color.White;
+            dgvCarrito.Location = new Point(18, 250);
+            dgvCarrito.Name = "dgvCarrito";
+            dgvCarrito.ReadOnly = true;
+            dgvCarrito.Size = new Size(1254, 355);
+            dgvCarrito.TabIndex = 3;
+            // 
             // btnFinalizar
-            this.btnFinalizar.BackColor = System.Drawing.Color.DarkGreen;
-            this.btnFinalizar.ForeColor = System.Drawing.Color.White;
-            this.btnFinalizar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btnFinalizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFinalizar.Location = new System.Drawing.Point(18, 460);
-            this.btnFinalizar.Name = "btnFinalizar";
-            this.btnFinalizar.Size = new System.Drawing.Size(200, 40);
-            this.btnFinalizar.TabIndex = 5;
-            this.btnFinalizar.Text = "FINALIZAR VENTA";
-            this.btnFinalizar.UseVisualStyleBackColor = false;
-            this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
-
+            // 
+            btnFinalizar.BackColor = Color.DarkGreen;
+            btnFinalizar.Dock = DockStyle.Bottom;
+            btnFinalizar.FlatStyle = FlatStyle.Flat;
+            btnFinalizar.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            btnFinalizar.ForeColor = Color.White;
+            btnFinalizar.Location = new Point(3, 106);
+            btnFinalizar.Name = "btnFinalizar";
+            btnFinalizar.Size = new Size(1248, 40);
+            btnFinalizar.TabIndex = 5;
+            btnFinalizar.Text = "FINALIZAR VENTA";
+            btnFinalizar.UseVisualStyleBackColor = false;
+            btnFinalizar.Click += btnFinalizar_Click;
+            // 
+            // lblTotal
+            // 
+            lblTotal.AutoSize = true;
+            lblTotal.BackColor = Color.Gold;
+            lblTotal.Dock = DockStyle.Bottom;
+            lblTotal.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTotal.Location = new Point(3, 69);
+            lblTotal.Name = "lblTotal";
+            lblTotal.Size = new Size(185, 37);
+            lblTotal.TabIndex = 8;
+            lblTotal.Text = "Total a Pagar";
+            lblTotal.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // groupBox3
+            // 
+            groupBox3.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            groupBox3.Controls.Add(lblTotal);
+            groupBox3.Controls.Add(btnFinalizar);
+            groupBox3.Location = new Point(18, 604);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Size = new Size(1254, 149);
+            groupBox3.TabIndex = 9;
+            groupBox3.TabStop = false;
+            groupBox3.Text = "Finalizar Venta";
+            // 
             // VentasForm
-            this.ClientSize = new System.Drawing.Size(800, 520);
-            this.Controls.Add(this.btnFinalizar);
-            this.Controls.Add(this.lblTotal);
-            this.Controls.Add(this.dgvCarrito);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.lblTitulo);
-            this.Name = "VentasForm";
-            this.Text = "Punto de Venta";
-            this.Load += new System.EventHandler(this.VentasForm_Load);
-            this.groupBox1.ResumeLayout(false); this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false); this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numCantidad)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCarrito)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            // 
+            ClientSize = new Size(1345, 765);
+            Controls.Add(groupBox3);
+            Controls.Add(dgvCarrito);
+            Controls.Add(groupBox2);
+            Controls.Add(groupBox1);
+            Controls.Add(lblTitulo);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Name = "VentasForm";
+            StartPosition = FormStartPosition.CenterParent;
+            Text = "Punto de Venta";
+            WindowState = FormWindowState.Maximized;
+            Load += VentasForm_Load;
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)numCantidad).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvCarrito).EndInit();
+            groupBox3.ResumeLayout(false);
+            groupBox3.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         private System.Windows.Forms.Label lblTitulo;
@@ -212,7 +312,6 @@
         private System.Windows.Forms.ComboBox cboProductos;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dgvCarrito;
-        private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Button btnFinalizar;
         private System.Windows.Forms.TextBox txtEscanear;
         private System.Windows.Forms.Label labelEscanear;
@@ -220,5 +319,9 @@
         // Controles Nuevos
         private System.Windows.Forms.ComboBox cboMetodoPago;
         private System.Windows.Forms.Label label4;
+        private Label lblTotal;
+        private GroupBox groupBox3;
+        private Button btnVentas;
+        private Button btnFiados;
     }
 }

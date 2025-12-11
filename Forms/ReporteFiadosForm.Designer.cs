@@ -12,111 +12,129 @@
 
         private void InitializeComponent()
         {
-            this.panelIzq = new System.Windows.Forms.Panel();
-            this.btnRegistrarPago = new System.Windows.Forms.Button();
-            this.lblSaldo = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cboClientes = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dgvMovimientos = new System.Windows.Forms.DataGridView();
-            this.lblTituloGrilla = new System.Windows.Forms.Label();
-
-            this.panelIzq.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMovimientos)).BeginInit();
-            this.SuspendLayout();
-
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReporteFiadosForm));
+            panelIzq = new Panel();
+            btnRegistrarPago = new Button();
+            lblSaldo = new Label();
+            label2 = new Label();
+            cboClientes = new ComboBox();
+            label1 = new Label();
+            dgvMovimientos = new DataGridView();
+            lblTituloGrilla = new Label();
+            panelIzq.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvMovimientos).BeginInit();
+            SuspendLayout();
             // 
-            // panelIzq (Panel de Control)
+            // panelIzq
             // 
-            this.panelIzq.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panelIzq.Controls.Add(this.btnRegistrarPago);
-            this.panelIzq.Controls.Add(this.lblSaldo);
-            this.panelIzq.Controls.Add(this.label2);
-            this.panelIzq.Controls.Add(this.cboClientes);
-            this.panelIzq.Controls.Add(this.label1);
-            this.panelIzq.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelIzq.Location = new System.Drawing.Point(0, 0);
-            this.panelIzq.Name = "panelIzq";
-            this.panelIzq.Size = new System.Drawing.Size(300, 500);
-            this.panelIzq.TabIndex = 0;
-
-            // Selector Cliente
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 30);
-            this.label1.Text = "Seleccione Cliente:";
-
-            this.cboClientes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboClientes.FormattingEnabled = true;
-            this.cboClientes.Location = new System.Drawing.Point(20, 50);
-            this.cboClientes.Name = "cboClientes";
-            this.cboClientes.Size = new System.Drawing.Size(250, 23);
-            this.cboClientes.TabIndex = 0;
-            this.cboClientes.SelectedIndexChanged += new System.EventHandler(this.cboClientes_SelectedIndexChanged);
-
-            // Tarjeta de Saldo
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label2.Location = new System.Drawing.Point(20, 120);
-            this.label2.Text = "Saldo Deudor Actual:";
-
-            this.lblSaldo.AutoSize = true;
-            this.lblSaldo.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold);
-            this.lblSaldo.ForeColor = System.Drawing.Color.Firebrick;
-            this.lblSaldo.Location = new System.Drawing.Point(20, 150);
-            this.lblSaldo.Text = "$ 0.00";
-
-            // Botón Pagar
-            this.btnRegistrarPago.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnRegistrarPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegistrarPago.ForeColor = System.Drawing.Color.White;
-            this.btnRegistrarPago.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btnRegistrarPago.Location = new System.Drawing.Point(20, 250);
-            this.btnRegistrarPago.Name = "btnRegistrarPago";
-            this.btnRegistrarPago.Size = new System.Drawing.Size(250, 50);
-            this.btnRegistrarPago.TabIndex = 1;
-            this.btnRegistrarPago.Text = "REGISTRAR PAGO";
-            this.btnRegistrarPago.UseVisualStyleBackColor = false;
-            this.btnRegistrarPago.Enabled = false; // Deshabilitado hasta elegir cliente
-            this.btnRegistrarPago.Click += new System.EventHandler(this.btnRegistrarPago_Click);
-
+            panelIzq.BackColor = Color.WhiteSmoke;
+            panelIzq.Controls.Add(btnRegistrarPago);
+            panelIzq.Controls.Add(lblSaldo);
+            panelIzq.Controls.Add(label2);
+            panelIzq.Controls.Add(cboClientes);
+            panelIzq.Controls.Add(label1);
+            panelIzq.Dock = DockStyle.Left;
+            panelIzq.Location = new Point(0, 0);
+            panelIzq.Name = "panelIzq";
+            panelIzq.Size = new Size(300, 500);
+            panelIzq.TabIndex = 0;
             // 
-            // dgvMovimientos (Grilla Derecha)
+            // btnRegistrarPago
             // 
-            this.dgvMovimientos.AllowUserToAddRows = false;
-            this.dgvMovimientos.AllowUserToDeleteRows = false;
-            this.dgvMovimientos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvMovimientos.BackgroundColor = System.Drawing.Color.White;
-            this.dgvMovimientos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMovimientos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvMovimientos.Location = new System.Drawing.Point(300, 40); // Dejamos espacio para título
-            this.dgvMovimientos.Name = "dgvMovimientos";
-            this.dgvMovimientos.ReadOnly = true;
-            this.dgvMovimientos.Size = new System.Drawing.Size(500, 460);
-            this.dgvMovimientos.TabIndex = 1;
-
-            // Título Grilla
-            this.lblTituloGrilla.BackColor = System.Drawing.Color.White;
-            this.lblTituloGrilla.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblTituloGrilla.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.lblTituloGrilla.Location = new System.Drawing.Point(300, 0);
-            this.lblTituloGrilla.Name = "lblTituloGrilla";
-            this.lblTituloGrilla.Padding = new System.Windows.Forms.Padding(10);
-            this.lblTituloGrilla.Size = new System.Drawing.Size(500, 40);
-            this.lblTituloGrilla.Text = "Historial de Movimientos (Fiados y Pagos)";
-
-            // Form
-            this.ClientSize = new System.Drawing.Size(800, 500);
-            this.Controls.Add(this.dgvMovimientos);
-            this.Controls.Add(this.lblTituloGrilla);
-            this.Controls.Add(this.panelIzq);
-            this.Name = "ReporteFiadosForm";
-            this.Text = "Estado de Cuenta Corriente";
-            this.Load += new System.EventHandler(this.ReporteFiadosForm_Load);
-
-            this.panelIzq.ResumeLayout(false);
-            this.panelIzq.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMovimientos)).EndInit();
-            this.ResumeLayout(false);
+            btnRegistrarPago.BackColor = Color.SeaGreen;
+            btnRegistrarPago.Enabled = false;
+            btnRegistrarPago.FlatStyle = FlatStyle.Flat;
+            btnRegistrarPago.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            btnRegistrarPago.ForeColor = Color.White;
+            btnRegistrarPago.Location = new Point(20, 250);
+            btnRegistrarPago.Name = "btnRegistrarPago";
+            btnRegistrarPago.Size = new Size(250, 50);
+            btnRegistrarPago.TabIndex = 1;
+            btnRegistrarPago.Text = "REGISTRAR PAGO";
+            btnRegistrarPago.UseVisualStyleBackColor = false;
+            btnRegistrarPago.Click += btnRegistrarPago_Click;
+            // 
+            // lblSaldo
+            // 
+            lblSaldo.AutoSize = true;
+            lblSaldo.Font = new Font("Segoe UI", 24F, FontStyle.Bold);
+            lblSaldo.ForeColor = Color.Firebrick;
+            lblSaldo.Location = new Point(20, 150);
+            lblSaldo.Name = "lblSaldo";
+            lblSaldo.Size = new Size(110, 45);
+            lblSaldo.TabIndex = 2;
+            lblSaldo.Text = "$ 0.00";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 12F);
+            label2.Location = new Point(20, 120);
+            label2.Name = "label2";
+            label2.Size = new Size(155, 21);
+            label2.TabIndex = 3;
+            label2.Text = "Saldo Deudor Actual:";
+            // 
+            // cboClientes
+            // 
+            cboClientes.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboClientes.FormattingEnabled = true;
+            cboClientes.Location = new Point(20, 50);
+            cboClientes.Name = "cboClientes";
+            cboClientes.Size = new Size(250, 23);
+            cboClientes.TabIndex = 0;
+            cboClientes.SelectedIndexChanged += cboClientes_SelectedIndexChanged;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(20, 30);
+            label1.Name = "label1";
+            label1.Size = new Size(106, 15);
+            label1.TabIndex = 4;
+            label1.Text = "Seleccione Cliente:";
+            // 
+            // dgvMovimientos
+            // 
+            dgvMovimientos.AllowUserToAddRows = false;
+            dgvMovimientos.AllowUserToDeleteRows = false;
+            dgvMovimientos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvMovimientos.BackgroundColor = Color.White;
+            dgvMovimientos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvMovimientos.Dock = DockStyle.Fill;
+            dgvMovimientos.Location = new Point(300, 40);
+            dgvMovimientos.Name = "dgvMovimientos";
+            dgvMovimientos.ReadOnly = true;
+            dgvMovimientos.Size = new Size(500, 460);
+            dgvMovimientos.TabIndex = 1;
+            // 
+            // lblTituloGrilla
+            // 
+            lblTituloGrilla.BackColor = Color.White;
+            lblTituloGrilla.Dock = DockStyle.Top;
+            lblTituloGrilla.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            lblTituloGrilla.Location = new Point(300, 0);
+            lblTituloGrilla.Name = "lblTituloGrilla";
+            lblTituloGrilla.Padding = new Padding(10);
+            lblTituloGrilla.Size = new Size(500, 40);
+            lblTituloGrilla.TabIndex = 2;
+            lblTituloGrilla.Text = "Historial de Movimientos (Fiados y Pagos)";
+            // 
+            // ReporteFiadosForm
+            // 
+            ClientSize = new Size(800, 500);
+            Controls.Add(dgvMovimientos);
+            Controls.Add(lblTituloGrilla);
+            Controls.Add(panelIzq);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Name = "ReporteFiadosForm";
+            StartPosition = FormStartPosition.CenterParent;
+            Text = "Estado de Cuenta Corriente";
+            Load += ReporteFiadosForm_Load;
+            panelIzq.ResumeLayout(false);
+            panelIzq.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvMovimientos).EndInit();
+            ResumeLayout(false);
         }
 
         private System.Windows.Forms.Panel panelIzq;

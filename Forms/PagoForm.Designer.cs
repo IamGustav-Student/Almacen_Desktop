@@ -12,81 +12,79 @@
 
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.numMonto = new System.Windows.Forms.NumericUpDown();
-            this.btnAceptar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
-
-            ((System.ComponentModel.ISupportInitialize)(this.numMonto)).BeginInit();
-            this.SuspendLayout();
-
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PagoForm));
+            label1 = new Label();
+            numMonto = new NumericUpDown();
+            btnAceptar = new Button();
+            btnCancelar = new Button();
+            ((System.ComponentModel.ISupportInitialize)numMonto).BeginInit();
+            SuspendLayout();
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label1.Location = new System.Drawing.Point(30, 20);
-            this.label1.Name = "label1";
-            this.label1.Text = "Ingrese el monto a pagar ($):";
-
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 12F);
+            label1.Location = new Point(30, 20);
+            label1.Name = "label1";
+            label1.Size = new Size(209, 21);
+            label1.TabIndex = 3;
+            label1.Text = "Ingrese el monto a pagar ($):";
             // 
             // numMonto
             // 
-            this.numMonto.DecimalPlaces = 2; // Permitir centavos
-            this.numMonto.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.numMonto.Location = new System.Drawing.Point(30, 50);
-            this.numMonto.Maximum = new decimal(new int[] { 10000000, 0, 0, 0 }); // Hasta 10 millones
-            this.numMonto.Name = "numMonto";
-            this.numMonto.Size = new System.Drawing.Size(220, 32);
-            this.numMonto.TabIndex = 0; // Foco inicial aquí
-            this.numMonto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-
+            numMonto.DecimalPlaces = 2;
+            numMonto.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            numMonto.Location = new Point(30, 50);
+            numMonto.Maximum = new decimal(new int[] { 10000000, 0, 0, 0 });
+            numMonto.Name = "numMonto";
+            numMonto.Size = new Size(220, 32);
+            numMonto.TabIndex = 0;
+            numMonto.TextAlign = HorizontalAlignment.Right;
             // 
             // btnAceptar
             // 
-            this.btnAceptar.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnAceptar.DialogResult = System.Windows.Forms.DialogResult.OK; // MAGIA: Esto cierra el form y dice OK
-            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAceptar.ForeColor = System.Drawing.Color.White;
-            this.btnAceptar.Location = new System.Drawing.Point(30, 100);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(100, 35);
-            this.btnAceptar.TabIndex = 1;
-            this.btnAceptar.Text = "ACEPTAR";
-            this.btnAceptar.UseVisualStyleBackColor = false;
-
+            btnAceptar.BackColor = Color.SeaGreen;
+            btnAceptar.DialogResult = DialogResult.OK;
+            btnAceptar.FlatStyle = FlatStyle.Flat;
+            btnAceptar.ForeColor = Color.White;
+            btnAceptar.Location = new Point(30, 100);
+            btnAceptar.Name = "btnAceptar";
+            btnAceptar.Size = new Size(100, 35);
+            btnAceptar.TabIndex = 1;
+            btnAceptar.Text = "ACEPTAR";
+            btnAceptar.UseVisualStyleBackColor = false;
             // 
             // btnCancelar
             // 
-            this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel; // MAGIA: Esto cierra y dice Cancel
-            this.btnCancelar.Location = new System.Drawing.Point(150, 100);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(100, 35);
-            this.btnCancelar.TabIndex = 2;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-
+            btnCancelar.DialogResult = DialogResult.Cancel;
+            btnCancelar.Location = new Point(150, 100);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(100, 35);
+            btnCancelar.TabIndex = 2;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.UseVisualStyleBackColor = true;
             // 
             // PagoForm
             // 
-            this.AcceptButton = this.btnAceptar; // Enter dispara Aceptar
-            this.CancelButton = this.btnCancelar; // Escape dispara Cancelar
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 161);
-            this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.btnAceptar);
-            this.Controls.Add(this.numMonto);
-            this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "PagoForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Registrar Pago";
-            ((System.ComponentModel.ISupportInitialize)(this.numMonto)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AcceptButton = btnAceptar;
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            CancelButton = btnCancelar;
+            ClientSize = new Size(284, 161);
+            Controls.Add(btnCancelar);
+            Controls.Add(btnAceptar);
+            Controls.Add(numMonto);
+            Controls.Add(label1);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "PagoForm";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Registrar Pago";
+            ((System.ComponentModel.ISupportInitialize)numMonto).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         private System.Windows.Forms.Label label1;

@@ -12,6 +12,7 @@
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClientesForm));
             dgvClientes = new DataGridView();
             panelFormulario = new Panel();
             btnLimpiar = new Button();
@@ -223,6 +224,7 @@
             ClientSize = new Size(900, 500);
             Controls.Add(dgvClientes);
             Controls.Add(panelFormulario);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "ClientesForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Administración de Clientes";

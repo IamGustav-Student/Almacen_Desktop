@@ -50,7 +50,7 @@ namespace AlmacenDesktop.Forms
 
                 if (consumidorFinal == null)
                 {
-                    // Lo creamos al vuelo si no existe
+                    // Se crea si no existe
                     consumidorFinal = new Cliente
                     {
                         Nombre = CLIENTE_DEF_NOMBRE,
@@ -75,6 +75,7 @@ namespace AlmacenDesktop.Forms
                 cboProductos.DisplayMember = "Nombre";
                 cboProductos.ValueMember = "Id";
             }
+            txtEscanear.Focus();
         }
 
         // --- LÓGICA INTELIGENTE ---
@@ -91,6 +92,7 @@ namespace AlmacenDesktop.Forms
                 cboClientes.Enabled = false;
                 SeleccionarConsumidorFinal();
             }
+            txtEscanear.Focus();
         }
 
         private void SeleccionarConsumidorFinal()
@@ -104,6 +106,7 @@ namespace AlmacenDesktop.Forms
                     break;
                 }
             }
+            txtEscanear.Focus();
         }
 
         private void txtEscanear_KeyPress(object sender, KeyPressEventArgs e)
@@ -146,6 +149,7 @@ namespace AlmacenDesktop.Forms
                     MessageBox.Show("Producto no encontrado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+            txtEscanear.Focus();
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -165,6 +169,7 @@ namespace AlmacenDesktop.Forms
             {
                 MessageBox.Show("No hay suficiente stock disponible.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            txtEscanear.Focus();
         }
 
         private void AgregarItemAlCarrito(Producto producto, int cantidad)
@@ -186,8 +191,9 @@ namespace AlmacenDesktop.Forms
                 };
                 _carrito.Add(item);
             }
-
+            
             ActualizarGrilla();
+            txtEscanear.Focus();
         }
 
         private void ActualizarGrilla()
@@ -237,6 +243,7 @@ namespace AlmacenDesktop.Forms
                         UsuarioId = _vendedor.Id,
                         Total = _carrito.Sum(x => x.Subtotal),
                         MetodoPago = metodoPago
+
                     };
 
                     context.Ventas.Add(nuevaVenta);
@@ -250,6 +257,7 @@ namespace AlmacenDesktop.Forms
 
                         var productoEnDb = context.Productos.Find(item.ProductoId);
                         productoEnDb.ReducirStock(item.Cantidad);
+                        txtEscanear.Focus();
                     }
 
                     context.SaveChanges();
@@ -257,6 +265,7 @@ namespace AlmacenDesktop.Forms
                     MessageBox.Show("¡Venta registrada con éxito!");
                     Limpiar();
                     return;
+                    txtEscanear.Focus();
 
                 }
             }
@@ -273,6 +282,46 @@ namespace AlmacenDesktop.Forms
             cboMetodoPago.SelectedIndex = 0;
             txtEscanear.Clear();
             txtEscanear.Focus();
+        }
+
+        private void btnFiados_Click(object sender, EventArgs e)
+        {
+            // Lógica extra de seguridad: Evitar abrir el historial mil veces
+            foreach (Form f in this.MdiChildren)
+            {
+                if (f is ReporteFiadosForm)
+                {
+                    f.BringToFront(); // Si ya está abierto, lo trae al frente
+                    return;
+                }
+            }
+            Form fiadosForm = new ReporteFiadosForm();
+            fiadosForm.Show();
+        }
+
+        private void btnVentas_Click(object sender, EventArgs e)
+        {
+            // Lógica extra de seguridad: Evitar abrir el historial mil veces
+            foreach (Form f in this.MdiChildren)
+            {
+                if (f is HistorialVentasForm)
+                {
+                    f.BringToFront(); // Si ya está abierto, lo trae al frente
+                    return;
+                }
+            }
+
+
+            Form HistorialForm = new HistorialVentasForm();
+            HistorialForm.Show();
+        }
+
+        private void txtEscanear_TextChanged(object sender, EventArgs  e)
+        {
+
+            
+               txtEscanear.Focus();
+            
         }
     }
 }
